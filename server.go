@@ -23,6 +23,6 @@ func serveStatic(w http.ResponseWriter, r *http.Request) {
 func main() {
 	http.HandleFunc("/static", serveStatic)
 	http.HandleFunc("/", serveDynamic)
-	http.ListenAndServe(Port, http.FileServer(http.Dir("/var/www")))
-	// http.ListenAndServe(Port, nil)
+	// http.ListenAndServe(Port, http.FileServer(http.Dir("/var/www")))
+	http.ListenAndServe(Port, nil)
 }
